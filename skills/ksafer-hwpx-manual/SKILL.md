@@ -32,7 +32,7 @@ KSAFER 운영매뉴얼의 Markdown과 HWPX를 함께 수정할 때 사용한다.
 
 - `Contents/header.xml`, `hp:secPr`, 표의 행·열·ID·구조, 개체 참조와 스타일 ID를 보존한다.
 - HWPX는 ZIP/XML 패키지이므로 `mimetype`가 첫 항목이며 비압축인지, 필수 파트와 XML이 정상인지 확인한다.
-- 문서에 실제 서버 경로를 쓸 때는 `/data2/ksafer`, 승인된 Python runtime, catalog의 owner 경로를 기준으로 한다.
+- 문서에 서버 경로를 쓸 때는 `KSAFER_SERVER_ROOT` 가명, 승인된 Python runtime, catalog의 owner 경로를 기준으로 한다.
 - `LINK_ID`, `NODE_ID`, `F_NODE`, `T_NODE`, `CHUNG`, CRS, 날짜·시간 단위와 자료형은 코드·스키마·기존 승인 자료와 대조한다.
 - 새 입력자료는 기존 승인자료와 폴더 구조, 내부 레이어명, 컬럼명·자료형, 식별자 인코딩, 시간 범위, `CHUNG`, CRS, geometry 의미가 모두 같아야 한다. 확장자만 같다는 이유로 승인하지 않는다.
 - 비밀번호, API 키, DB URL의 실제 값은 문서·코드 예시·로그·검증 결과에 쓰지 않는다. 환경변수명이나 보호된 설정 경로만 표시한다.

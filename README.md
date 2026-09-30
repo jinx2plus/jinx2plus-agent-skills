@@ -47,7 +47,7 @@ git pull --ff-only
 ./install.sh gajae --force
 ```
 
-The repository contains only skill instructions and their needed reference files. It excludes credentials, database contents, project data, and generated artifacts. A few domain skills intentionally retain operational path examples such as `/data2/ksafer`.
+The repository contains only skill instructions and their needed reference files. It excludes credentials, database contents, project data, and generated artifacts. Domain skills use `KSAFER_SERVER_ROOT` as a server-root alias.
 
 ## Verified local agent environment
 
