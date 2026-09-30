@@ -1,0 +1,4 @@
+interface:
+  display_name: "KSAFER HWPX 매뉴얼"
+  short_description: "KSAFER 운영매뉴얼 HWPX 편집과 자연화 검증"
+  default_prompt: "기존 HWPX 양식을 유지하면서 운영매뉴얼 내용을 수정하고 문장과 코드 흔적을 검증해줘."
