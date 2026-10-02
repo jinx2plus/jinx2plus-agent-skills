@@ -12,8 +12,22 @@ Portable personal `SKILL.md` collection for Codex and Gajae Code.
 | `rhwp-cli` | HWP/HWPX inspection and rendering through rhwp |
 | `pdf` | PDF creation, inspection, and visual QA |
 | `graphify` | Codebase graph analysis and repository navigation |
+| [`gajae-model-profiles`](skills/gajae-model-profiles/README.md) | Gajae Code 역할별 사용자 지정 모델 프로필 및 라우팅 설정 |
 
 `patina` is intentionally not vendored. It is a standalone project with its own CLI, scripts, and large research artifacts; install it separately from its maintained upstream source, then keep its installation under the same host skill directory.
+
+## Gajae Code 모델 프로필
+
+Gajae Code의 `default`, `executor`, `planner`, `architect`, `critic` 역할에 사용할 모델과 공급자 조합을 정리했습니다.
+
+| 프로필 | 용도 |
+| --- | --- |
+| `custom` | Grok 중심의 기본 프로필 |
+| `normal` | xAI와 OpenAI Codex를 함께 사용하는 일반 프로필 |
+| `runoppa` | OpenAI Codex 기반의 고성능 프로필 |
+| `ksafer-split` | Google Antigravity, xAI, OpenAI Codex를 역할별로 분할한 프로필 |
+
+자세한 모델 ID와 복사 가능한 `models.yml`은 [`skills/gajae-model-profiles/README.md`](skills/gajae-model-profiles/README.md)를 참고하십시오. 모델 프로필 파일에는 API 키, OAuth 토큰, `config.yml`을 포함하지 않으며, 기존 스킬 설정을 덮어쓰지 않고 별도로 추가해야 합니다.
 
 ## Install
 
