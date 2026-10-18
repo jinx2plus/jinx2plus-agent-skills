@@ -118,11 +118,11 @@ Run from a separate working directory (outside `jinx2plus-agent-skills`), in Bas
 
 ```bash
 git clone https://github.com/jinx2plus/sports-team-colors.git
-git -C sports-team-colors checkout --detach e03c049902656f5d02702fb0a104d4a12cd5bd7f
+git -C sports-team-colors checkout --detach caff63869e7f6c74f33de03c4d46d0e27907a4bc
 python -m pip install -e ./sports-team-colors
 python -c "from sports_colors import get_palette, audit_palette, matplotlib_rc, plotly_layout; print('sports_colors API OK')"
 ```
 
-The detached HEAD is intentional: it pins the dependency to [the merged and tested revision](https://github.com/jinx2plus/sports-team-colors/commit/e03c049902656f5d02702fb0a104d4a12cd5bd7f). The new APIs are now also on `main`, but a plain `git clone` without an explicit checkout will install a moving revision. If you already cloned the library, use `git -C sports-team-colors fetch origin main` before checking out the pinned commit.
+The detached HEAD is intentional: it pins the dependency to [the merged and tested revision](https://github.com/jinx2plus/sports-team-colors/commit/caff63869e7f6c74f33de03c4d46d0e27907a4bc). The new APIs are now also on `main`, but a plain `git clone` without an explicit checkout will install a moving revision. If you already cloned the library, use `git -C sports-team-colors fetch origin main` before checking out the pinned commit.
 
 When upgrading to a new library release, update this pinned SHA to a reviewed release tag or commit after verifying that all four APIs remain compatible. The design skills are instructions, not a Python package installer. Reopen your coding-agent session after installing them.
