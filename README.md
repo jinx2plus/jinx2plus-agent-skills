@@ -110,19 +110,19 @@ Both skills integrate with [sports-team-colors](https://github.com/jinx2plus/spo
 ./install.sh gajae
 ```
 
-### Required sports-team-colors revision (before the companion library PR is merged)
+### Required sports-team-colors revision (merged and pinned)
 
-The new skills require `get_palette`, `audit_palette`, `matplotlib_rc`, and `plotly_layout`. **These APIs are not on the library's `main` branch yet.** Until [sports-team-colors PR #1](https://github.com/jinx2plus/sports-team-colors/pull/1) is merged, install the **verified library commit** below, not the default branch.
+The new skills require `get_palette`, `audit_palette`, `matplotlib_rc`, and `plotly_layout`. Those APIs are available on `main` after [sports-team-colors PR #1](https://github.com/jinx2plus/sports-team-colors/pull/1) was merged. To make both skills reproducible, install the **tested merge commit** `e03c049`, rather than relying on an unspecified default-branch revision.
 
 Run from a separate working directory (outside `jinx2plus-agent-skills`), in Bash or PowerShell:
 
 ```bash
 git clone https://github.com/jinx2plus/sports-team-colors.git
-git -C sports-team-colors checkout --detach 333f3ca41d0c91a2c25cbae69ec695b6a7a10a9c
+git -C sports-team-colors checkout --detach e03c049902656f5d02702fb0a104d4a12cd5bd7f
 python -m pip install -e ./sports-team-colors
 python -c "from sports_colors import get_palette, audit_palette, matplotlib_rc, plotly_layout; print('sports_colors API OK')"
 ```
 
-The detached HEAD is intentional: this pins the checked-out source to commit [`333f3ca41d0c91a2c25cbae69ec695b6a7a10a9c`](https://github.com/jinx2plus/sports-team-colors/commit/333f3ca41d0c91a2c25cbae69ec695b6a7a10a9c) from `feat/chart-aware-palettes-20261019`. A plain `git clone` followed immediately by `pip install -e .` without that checkout installs `main`, where these APIs are currently missing. If you already cloned the library, use `git -C sports-team-colors fetch origin feat/chart-aware-palettes-20261019` before checking out the pinned SHA.
+The detached HEAD is intentional: it pins the dependency to [the merged and tested revision](https://github.com/jinx2plus/sports-team-colors/commit/e03c049902656f5d02702fb0a104d4a12cd5bd7f). The new APIs are now also on `main`, but a plain `git clone` without an explicit checkout will install a moving revision. If you already cloned the library, use `git -C sports-team-colors fetch origin main` before checking out the pinned commit.
 
-Once the companion library PR is merged, update this documentation to a reviewed **release tag or commit** that contains all four APIs; do not silently switch to an unpinned branch. The design skills are instructions, not a Python package installer. Reopen your coding-agent session after installing them.
+When upgrading to a new library release, update this pinned SHA to a reviewed release tag or commit after verifying that all four APIs remain compatible. The design skills are instructions, not a Python package installer. Reopen your coding-agent session after installing them.
