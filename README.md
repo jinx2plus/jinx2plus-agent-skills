@@ -31,7 +31,7 @@ Gajae Code의 `default`, `executor`, `planner`, `architect`, `critic` 역할에 
 
 ## Install
 
-Clone this private repository on the destination computer, then install for the target agent.
+Clone this repository on the destination computer, then install for the target agent.
 
 ```bash
 git clone https://github.com/jinx2plus/jinx2plus-agent-skills.git
@@ -94,3 +94,20 @@ gjc
 ```
 
 Use Orca when one project needs worktree isolation or a managed terminal session. Configure its agent runtime to WSL before selecting Gajae Code, because this machine's `gjc` executable is installed in WSL. OMO and the Grok Agent are separate command-line harnesses; start them from a terminal in the target repository and let each retain its own credentials and model configuration.
+
+
+## New: Sports Color Design & Accessibility Skills
+
+| Skill | When to use it |
+| --- | --- |
+| [`sports-palette-designer`](skills/sports-palette-designer/SKILL.md) | Design Matplotlib/Plotly charts, dashboards and reports with team-inspired colors, data-aware categorical/sequential/diverging encodings and neutral supporting UI |
+| [`dataviz-accessibility-auditor`](skills/dataviz-accessibility-auditor/SKILL.md) | Audit chart contrast, approximate color-vision risks, redundant encodings, labels and semantic traffic-safety constraints |
+
+Both skills integrate with [sports-team-colors](https://github.com/jinx2plus/sports-team-colors), whose source team HEX values remain unchanged while display colors may be derived for accessibility. They include reference checklists and manual evaluation prompts. The existing install scripts automatically copy both directories:
+
+```bash
+./install.sh codex
+./install.sh gajae
+```
+
+Install the Python library separately from a checkout: `python -m pip install -e .` from `sports-team-colors`. The design skills are instructions, not a Python package installer. Reopen your coding-agent session after installing skills.
